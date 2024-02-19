@@ -32,7 +32,7 @@ def train_step(model: torch.nn.Module,
     (0.1112, 0.8743)
   """
   # Put model in train mode
-  model.train()
+  model.train(True)
 
   # Setup train loss and train accuracy values
   train_loss, train_acc = 0, 0
@@ -46,7 +46,7 @@ def train_step(model: torch.nn.Module,
       y_pred = model(X)
 
       # 2. Calculate  and accumulate loss
-      loss = loss_fn(y_pred, y.view(1, -1))
+      loss = loss_fn(y_pred, y)
       train_loss += loss.item() 
 
       # 3. Optimizer zero grad
@@ -107,7 +107,7 @@ def test_step(model: torch.nn.Module,
           test_pred = model(X)
 
           # 2. Calculate and accumulate loss
-          loss = loss_fn(test_pred, y.view(1, -1))
+          loss = loss_fn(test_pred, y)
           test_loss += loss.item()          
           
           # Calculate and accumulate accuracy
