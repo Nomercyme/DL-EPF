@@ -64,7 +64,7 @@ def create_dataloaders_image(
 
   return train_dataloader, test_dataloader, class_names
 
-class TimeseriesDataset(Dataset):   
+class TimeseriesDataset_new(Dataset):   
     def __init__(self, X, y, seq_len=1):
         self.X = X
         self.y = y
@@ -75,3 +75,14 @@ class TimeseriesDataset(Dataset):
 
     def __getitem__(self, index):
         return (self.X[index:index+self.seq_len], self.y[index+self.seq_len-1])
+
+class TimeseriesDataset(Dataset):   
+    def __init__(self, X, y):
+        self.X = X
+        self.y = y
+
+    def __len__(self):
+        return len(self.X)
+
+    def __getitem__(self, i):
+        return self.X[i], self.y[i]

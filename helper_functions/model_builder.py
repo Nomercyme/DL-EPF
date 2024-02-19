@@ -27,7 +27,6 @@ class VanillaDNN(nn.Module):
       )
 
   def forward(self, x: torch.Tensor):
-      # x = x.view(x.size(0), -1)
       output = self.layer_stack(x)
       return output
       # return self.classifier(self.conv_block_2(self.conv_block_1(x))) # <- leverage the benefits of operator fusion
@@ -37,7 +36,9 @@ class LSTM(nn.Module):
     super().__init__()
     self.hidden_units = hidden_units
     self.num_stacked_layers = num_stacked_layers
+    # number of stacked layers can be increased for LSTM
     self.lstm = nn.LSTM(input_shape, hidden_units, num_stacked_layers, batch_first = True)
+
     self.fc = nn.Linear(hidden_units, 1) # fully connected layer to predict final closing value
 
   def forward(self, x):
