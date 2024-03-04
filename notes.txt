@@ -1,0 +1,28 @@
+>>>>>DIFFERENT MULTISTEP FORECASTING OPTIONS (https://machinelearningmastery.com/multi-step-time-series-forecasting/)
+1. Direct Multi-step Forecast Strategy
+    The direct method involves developing a separate model for each forecast time step.
+2. Recursive Multi-step Forecast
+    The recursive strategy involves using a one-step model multiple times where the prediction for the prior time step is used as an input for making a prediction on the following time step.
+    Because predictions are used in place of observations, the recursive strategy allows prediction errors to accumulate such that performance can quickly degrade as the prediction time horizon increases.
+3. Direct-Recursive Hybrid Strategies
+    The direct and recursive strategies can be combined to offer the benefits of both methods. For example, a separate model can be constructed for each time step to be predicted, but each model may use the predictions made by models at prior time steps as input values.
+4. Multiple Output Strategy
+    The multiple output strategy involves developing one model that is capable of predicting the entire forecast sequence in a one-shot manner. In the case of predicting the temperature for the next two days, we would develop one model and use it to predict the next two days as one operation. Multiple output models are more complex as they can learn the dependence structure between inputs and outputs as well as between outputs.
+
+
+>>>>>Walk Forward Validation (https://www.linkedin.com/pulse/walk-forward-validation-yeshwanth-n/)
+Walk Forward Validation (WFV) is a time-series cross-validation technique used to assess the performance of predictive models. It is particularly useful for time-ordered data where temporal sequence matters, such as stock prices, weather data, or sales figures. WFV is designed to be more realistic in evaluating how well a model will generalize to future, unseen data.
+Weekly example: This is where a model is required to make a one week prediction, then the actual data for that week is made available to the model so that it can be used as the basis for making a prediction on the subsequent week.
+Input, Predict
+[Week1] Week2
+[Week1 + Week2] Week3
+[Week1 + Week2 + Week3] Week4
+
+>>>>>Seq2seq (https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html)
+Further, specialized architectures have been developed that are specifically designed to make multi-step sequence predictions, generally referred to as sequence-to-sequence prediction, or seq2seq for short. This is useful as multi-step time series forecasting is a type of seq2seq prediction.
+An example of a recurrent neural network architecture designed for seq2seq problems is the encoder-decoder LSTM.
+
+>>>>>Multistep multi-input time series forecasting example (https://www.kaggle.com/code/wodands/notebook7df75bd01e/edit)
+
+>>>>>Joris tips
+Als je future covariates in je model wil steken moet je een tensor maken met "padding", i.e. future covariates van 
