@@ -18,6 +18,11 @@ Input, Predict
 [Week1 + Week2] Week3
 [Week1 + Week2 + Week3] Week4
 
->>>>>Seq2seq
+>>>>>Seq2seq (https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html)
 Further, specialized architectures have been developed that are specifically designed to make multi-step sequence predictions, generally referred to as sequence-to-sequence prediction, or seq2seq for short. This is useful as multi-step time series forecasting is a type of seq2seq prediction.
 An example of a recurrent neural network architecture designed for seq2seq problems is the encoder-decoder LSTM.
+
+>>>>>Multistep multi-input time series forecasting example (https://www.kaggle.com/code/wodands/notebook7df75bd01e/edit)
+
+>>>>>Joris tips
+Als je future covariates in je model wil steken moet je een tensor maken met "padding", i.e. future covariates van 
