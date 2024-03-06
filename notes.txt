@@ -25,4 +25,4 @@ An example of a recurrent neural network architecture designed for seq2seq probl
 >>>>>Multistep multi-input time series forecasting example (https://www.kaggle.com/code/wodands/notebook7df75bd01e/edit)
 
 >>>>>Joris tips
-Als je future covariates in je model wil steken moet je een tensor maken met "padding", i.e. future covariates van 
+Als je future covariates in je model wil steken moet je een tensor maken met "padding", i.e. future covariates ivm weer dus 24H in toekomst voor voorspellingen van morgen kun je via tensor toevoegen door eerste 24 waardes in te vullen en rest aan te vullen met 0'n
