@@ -26,3 +26,10 @@ An example of a recurrent neural network architecture designed for seq2seq probl
 
 >>>>>Joris tips
 Als je future covariates in je model wil steken moet je een tensor maken met "padding", i.e. future covariates ivm weer dus 24H in toekomst voor voorspellingen van morgen kun je via tensor toevoegen door eerste 24 waardes in te vullen en rest aan te vullen met 0'n
+
+>>>>>Useful article
+https://medium.com/@786sksujanislam786/multivariate-time-series-forecasting-using-lstm-4f8a9d32a509
+
+>>>>>Optimal calibration window lenghth
+https://www.mdpi.com/1996-1073/11/9/2364
+Optimal calibration window lengths are suggested to be around 56 to 112 days at the shorter end and 714 to 728 days at the longer end.
